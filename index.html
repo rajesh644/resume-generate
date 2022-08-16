@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/images/5790533.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Resume genrator</title>
+  </head>
+  <body class="y">
+  <div class="container-fluid" id="cv-form">
+    <div class="form-check form-switch float-end">
+      <input class="form-check-input " type="checkbox">
+    </div>
+
+    <h1 class="text-center my-2 head" >Resume Genrator</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="text-center my-2 mb-4">Personal information</h3>
+
+        <div class="form_group ">
+          <label for="namefield" >Your full name:</label>
+          <input type="text" id="namefield" placeholder="Enter Here"     class="form-control my-1 " >
+        </div>
+
+        <div class="form_group mt-3">
+          <label for="contactfield">Your Contact Number:</label>
+          <input type="text" id="contactfield" placeholder="Enter Here" class="form-control my-1">
+        </div>
+
+        <div class="form_group mt-3">
+          <label for="email
+          field">Your Email ID:</label>
+          <input type="email" id="emailfield" placeholder="Enter Here" class="form-control my-1" >
+        </div>
+
+        <div class="form_group mt-3">
+          <label for="">Select your photo:</label>
+          <input type="file" id="imagefield" class="form-control my-1" >
+        </div>
+
+
+        <div class="form_group mt-3">
+          <label for="addressfield">Your address:</label>
+         <textarea  id="addressfield" placeholder="Enter Here" rows="4" class="form-control my-1"></textarea>
+        </div>
+
+
+        <p class="text-secondary">Important links</p>
+
+        
+        <div class="form_group ">
+          <label for="fbfield" >facebook link:</label>
+          <input type="text" id="fbfield" placeholder="Enter Here"     class="form-control my-1 " >
+        </div>
+
+        <div class="form_group mt-3">
+          <label for="instafield">Instagram link: </label>
+          <input type="text" id="instafield" placeholder="Enter Here" class="form-control my-1">
+        </div>
+
+        <div class="form_group mt-3">
+          <label for="linkedfield">LinkedIN : </label>
+          <input type="text" id="linkedfield" placeholder="Enter Here" class="form-control my-1">
+        </div>
+      </div>
+
+
+      <div class=" col-md-6 ">
+        <h3 class="text-center my-2 mb-4">Professionl information</h3>
+        
+        <div class="form_group">
+          <label >Objective:</label>
+         <textarea  placeholder="Enter Here"  class="form-control my-1 objfield" rows="4" id="objectivefield"></textarea>
+        </div>
+
+        <div class="form_group mt-3" id="skills">
+          <label >Skills:</label>
+         <textarea  placeholder="Enter Here"  class="form-control my-1  skillfield" rows="3"></textarea>
+
+         <div class="container text-center my-2" id="skillAddbtn">
+          <button onclick="AddSkills()" class="btn-outline-primary px-3 ">Add</button>
+         </div>
+        </div>
+
+        <div class="form_group" id="we">
+          <label >Workexprience:</label>
+         <textarea placeholder="Enter Here" class="form-control my-1 wefield" rows="3"></textarea>
+
+         <div class="container text-center my-2 " id="weAddbtn">
+          <button onclick="addnewwefield()" class="btn-outline-primary px-3 ">Add</button>
+         </div>
+        </div>
+
+        <div class="form_group" id="aq">
+          <label >Academic Qulification:</label>
+         <textarea  placeholder="Enter Here"  class="form-control my-1 eqfield"></textarea>
+
+         <div class="container text-center my-2" id="aqAddbtn">
+          <button onclick="AddNewAqField()" class="btn-outline-primary px-3 ">Add</button>
+         </div>
+        </div>
+
+      </div>
+    </div>
+<div class="container text-center my-4" >
+  <button onclick="generateCV()" class="btn btn-outline-primary btn-lg ">Generate CV</button>
+</div>
+
+  </div>
+
+  <!-- cv template -->
+
+  <div class="container-fluid " id="cv-template">
+    <div class="row">
+      <div class="col-md-4 text-center py-5 background gx-0">
+<img id="imageT" src="assets/images/OIP.jpg" class="img-fluid myimg" alt="">
+
+
+  <p id="nameT1">Rajesh Sngh</p>
+ 
+  <span>+91</span><span id="contactT"> 17900085375,+918898715655</span>
+  <p><a href="mailto:" id="emailT" target="_blank">sajhcdbhdg@gmail.com</a></p>
+  <p id="addressT">563565/5566565 sector 35 nodia , India</p>
+  <hr/>
+  <p>
+    <i class="fa-brands fa-facebook-f"></i><a id="fbT" href="#" target="_blank">https://www.facebook.com/rajesh singh</a>
+  </p>
+
+  <p>
+    <i class="fa-brands fa-instagram"></i><a id="instaT" href="#" target="_blank">https://www.Instagram.com/rajesh singh</a>
+  </p>
+
+  <p>
+    <i class="fa-brands fa-linkedin"></i><a id="linkedidT" href="#" target="_blank">https://www.LinkedIN.com/rajesh singh</a>
+  </p>
+
+      </div>
+
+
+      <div class="col-md-8 py-4" >
+        <h1 id="namet2" class="text-center fw-bold">Rajesh singh</h1>
+
+        <!-- Objective card -->
+
+        <div class="card mt-4">
+          <div class="card-header background">
+<h3>Objective</h3>
+          </div>
+          <div class="card-body">
+            <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate </p>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header background">
+<h3>Skills</h3>
+          </div>
+          <div class="card-body">
+            <ul id="skillT">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+          </div>
+        </div>
+
+
+        
+        <div class="card mt-4">
+          <div class="card-header background">
+<h3>Workexprience</h3>
+          </div>
+          <div class="card-body">
+          <ul id="weT">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+          </ul>
+          </div>
+        </div>
+
+
+        <div class="card mt-4">
+          <div class="card-header background">
+<h3>Academic Qulification</h3>
+          </div>
+          <div class="card-body">
+          <ul id="aqT">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+          </ul>
+          </div>
+        </div>
+
+<div class="container text-center mt-3 ">
+  <button onclick="printCV()" class="btn background form-control"> print CV</button>
+</div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script src="assets/js/script.js"></script>
+    </body>
+</html>
+
+

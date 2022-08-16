@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+#cv-form{
+    display: none;
+} */
+
+.myimg{
+    border-radius:50% ;
+    width: 200px;
+
+}
+
+.background{
+    background-color: aqua;
+}
+#cv-template{
+    display: none;
+}
+.fa-brands{
+    color: rgb(0, 89, 253);
+    margin-right: 5px;
+}
+
+.head:hover{
+color: skyblue;
+transition: all 0.3s;
+}
+
+input:hover{
+background-color: rgb(226, 226, 226);
+transition: all 0.4s;
+}
+textarea:hover{
+    background-color: rgb(226, 226, 226);
+    transition: all 0.4s;
+    }
+
